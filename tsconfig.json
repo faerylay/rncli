@@ -1,5 +1,49 @@
 {
-  "extends": "@react-native/typescript-config",
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/Pods"]
+	"compilerOptions": {
+		"target": "ES2022",
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext",
+			"esnext.asynciterable",
+			"esnext.intl",
+			"esnext.symbol",
+			"esnext.array"
+		],
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"noImplicitAny": false,
+		"esModuleInterop": true,
+		"alwaysStrict": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "react-native",
+		"incremental": true,
+		"noEmitOnError": true,
+		"baseUrl": ".",
+		"paths": {
+			"~*": ["./src/*"]
+		},
+		"typeRoots": ["./node_modules/@types", "./src/types"]
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.js",
+		"src/**/*.tsx",
+		"./App.tsx",
+		"./src/**/*",
+		"src/**/*",
+		"src/**/*.*"
+		// "ThemeContext.tsx"
+	],
+	"exclude": ["node_modules"]
 }
