@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
+import { UserLogoutBtn } from '../../app/components'
 
 const ProfileScreen = () => {
 	return (
 		<View style={styles.container}>
-			<Text>ProfileScreen</Text>
+			<UserLogoutBtn />
 		</View>
 	)
 }

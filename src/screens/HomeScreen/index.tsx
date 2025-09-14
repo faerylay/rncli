@@ -2,16 +2,28 @@ import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { CBackground, CCustomBar, CHeaderBar } from '../../app/common'
-import { CIconComp } from '../../app/components'
+import { PostLists } from '../../app/features'
+import { mockPosts } from '../../mockData/posts'
 
 const HomeScreen = () => {
 	const navigation = useNavigation<any>()
-	const isLoading = false
+	const [loading, setLoading] = React.useState(false)
+
 	return (
 		<CBackground>
 			<CCustomBar />
 			<CHeaderBar detail={false} hLeftTitle={'RNCLI'} />
-
+			<PostLists
+				data={mockPosts}
+				refreshing={loading}
+				onRefresh={() => {
+					setLoading(true)
+					setTimeout(() => {
+						setLoading(false)
+					}, 2000)
+				}}
+			/>
+			{/* 
 			<TouchableOpacity
 				activeOpacity={0.9}
 				disabled={isLoading}
@@ -41,7 +53,7 @@ const HomeScreen = () => {
 					})
 				}}>
 				<Text style={styles.btnText}>post Detail screen</Text>
-			</TouchableOpacity>
+			</TouchableOpacity> */}
 		</CBackground>
 	)
 }
